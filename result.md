@@ -60,6 +60,8 @@ main
 15.	Используйте git diff mybranch master, чтобы увидеть разницу между двумя ветками.
 <img src="img/screen26.jpg">
 16.	 Добавить текстовый документ со скриншотами в ветку mybranch. Закоммитить и запушить на удаленный репо ветку mybranch (git push -u origin mybranch)
-<img src="img/screen17.jpg">
+<img src="img/screen27.jpg">
+<img src="img/screen28.jpg">
 17.	 Убедиться что в github.com две ветки master и mybranch. Не забыть запушить изменения master ветки в master
-<img src="img/screen17.jpg">
+<img src="img/screen30.jpg">
+<img src="img/screen29.jpg">
