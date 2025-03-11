@@ -48,3 +48,8 @@ echo "This is an indispensable truth!" > file.txt.
 <img src="img/screen85.jpg"> 
 Сделаем коммит
 <img src="img/screen86.jpg"> 
+11.	После исправления всех merge конфликтов запушить в master изменения.
+12.	Запушить документ с результатами вашей работы
+<img src="img/screen87.jpg">
+<img src="img/screen88.jpg">  
+
