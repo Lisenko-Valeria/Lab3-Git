@@ -1,28 +1,45 @@
-def merge_sort(nums): 
-    if len(nums) > 1: 
-        mid = len(nums)//2
-        left = nums[:mid] 
-        right = nums[mid:]
-        merge_sort(left) 
-        merge_sort(right) 
-"""i — индекс в списке left,
-j — индекс в списке right,
-k — индекс в исходном списке nums, в который в конечном итоге нужно вставить все числа по порядку."""
-        i = j = k = 0
-        while i < len(left) and j < len(right): 
-            if left[i] < right[j]: 
-                nums[k] = left[i] 
-                i+=1
-            else: 
-                nums[k] = right[j] 
-                j+=1
-            k+=1
-        while i < len(left): 
-            nums[k] = left[i] 
-            i+=1
-            k+=1
-        while j < len(right): 
-            nums[k] = right[j] 
-            j+=1
-            k+=1
-        return nums
+from heapq import merge
+
+def merge_sort2(m):
+    """Sort list, using two part merge sort"""
+    if len(m) <= 1:
+        return m
+
+    # Determine the pivot point
+    middle = len(m) // 2
+
+    # Split the list at the pivot
+    left = m[:middle]
+    right = m[middle:]
+
+    # Sort recursively
+    right = merge_sort2(right)
+    left = merge_sort2(left)
+
+    # Merge and return
+    return list(merge(right, left))
+
+def merge_sort4(m):
+    """Sort list, using four part merge sort"""
+    if len(m) <= 4:
+        return sorted(m)
+
+    # Determine the pivot point
+    middle = len(m) // 2
+    leftMiddle = middle // 2
+    rightMiddle = middle + leftMiddle
+
+    # Split the list at the pivots
+    first = m[:leftMiddle]
+    second = m[leftMiddle:middle]
+    third = m[middle:rightMiddle]
+    last = m[rightMiddle:]
+
+    # Sort recursively
+    first = merge_sort4(first)
+    second = merge_sort4(second)
+    third = merge_sort4(third)
+    last = merge_sort4(last)
+
+    # Merge and return
+    return list(merge(first, second, third, last))
