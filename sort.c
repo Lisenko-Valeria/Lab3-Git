@@ -16,3 +16,8 @@ int BubbleSort(int n, int A[]){
 }
 //comment 1
 //comment 2
+
+void main(){
+    int a[] = {4, 2};
+    int x = BubbleSort(3, a);
+}
